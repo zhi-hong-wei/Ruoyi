@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="utf-8">
+    <th:block th:include="include :: header('修改设备管理')" />
+    <th:block th:include="include :: datetimepicker-css" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-device-edit" th:object="${tblDevice}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备id：</label>
+                <div class="col-sm-8">
+                    <input name="selfId" th:field="*{selfId}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">RFID标签：</label>
+                <div class="col-sm-8">
+                    <input name="rfidId" th:field="*{rfidId}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">设备ip地址：</label>
+                <div class="col-sm-8">
+                    <input name="ip" th:field="*{ip}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">设备名称：</label>
+                <div class="col-sm-8">
+                    <textarea name="name" class="form-control" required>[[*{name}]]</textarea>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备身份编码：</label>
+                <div class="col-sm-8">
+                    <input name="deviceCode" th:field="*{deviceCode}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">ITSM设备编码：</label>
+                <div class="col-sm-8">
+                    <input name="itsmCode" th:field="*{itsmCode}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备状态：</label>
+                <div class="col-sm-8">
+                    <input name="status" th:field="*{status}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备类别：</label>
+                <div class="col-sm-8">
+                    <input name="category" th:field="*{category}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备品牌：</label>
+                <div class="col-sm-8">
+                    <input name="brand" th:field="*{brand}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备型号：</label>
+                <div class="col-sm-8">
+                    <input name="model" th:field="*{model}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">产品序列号：</label>
+                <div class="col-sm-8">
+                    <input name="serialNumber" th:field="*{serialNumber}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">投运日期：</label>
+                <div class="col-sm-8">
+                    <div class="input-group date">
+                        <input name="startTime" th:value="${#dates.format(tblDevice.startTime, 'yyyy-MM-dd')}" class="form-control" placeholder="yyyy-MM-dd" type="text" required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备使用机构：</label>
+                <div class="col-sm-8">
+                    <input name="agency" th:field="*{agency}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备使用部门：</label>
+                <div class="col-sm-8">
+                    <input name="department" th:field="*{department}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">设备运维班组：</label>
+                <div class="col-sm-8">
+                    <input name="maintenance" th:field="*{maintenance}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">责任人：</label>
+                <div class="col-sm-8">
+                    <input name="responsible" th:field="*{responsible}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">使用人：</label>
+                <div class="col-sm-8">
+                    <input name="user" th:field="*{user}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">原厂维保到期时间：</label>
+                <div class="col-sm-8">
+                    <input name="expirationTime" th:field="*{expirationTime}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">供应商：</label>
+                <div class="col-sm-8">
+                    <input name="supplier" th:field="*{supplier}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">产权单位：</label>
+                <div class="col-sm-8">
+                    <input name="propertyUnit" th:field="*{propertyUnit}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">设备位置：</label>
+                <div class="col-sm-8">
+                    <input name="location" th:field="*{location}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否借出：</label>
+                <div class="col-sm-8">
+                    <div class="radio-box" th:each="dict : ${@dict.getType('fuc_borrow')}">
+                        <input type="radio" th:id="${'isborrow_' + dict.dictCode}" name="isborrow" th:value="${dict.dictValue}" th:field="*{isborrow}" required>
+                        <label th:for="${'isborrow_' + dict.dictCode}" th:text="${dict.dictLabel}"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否采集数据：</label>
+                <div class="col-sm-8">
+                    <div class="radio-box" th:each="dict : ${@dict.getType('fuc_collection')}">
+                        <input type="radio" th:id="${'iscollection_' + dict.dictCode}" name="iscollection" th:value="${dict.dictValue}" th:field="*{iscollection}" required>
+                        <label th:for="${'iscollection_' + dict.dictCode}" th:text="${dict.dictLabel}"></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <th:block th:include="include :: datetimepicker-js" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/device";
+        $("#form-device-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-device-edit').serialize());
+            }
+        }
+
+        $("input[name='startTime']").datetimepicker({
+            format: "yyyy-mm-dd",
+            minView: "month",
+            autoclose: true
+        });
+    </script>
+</body>
+</html>

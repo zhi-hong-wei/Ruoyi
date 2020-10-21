@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TblBorrowMapper">
+    
+    <resultMap type="TblBorrow" id="TblBorrowResult">
+        <result property="id"    column="id"    />
+        <result property="deviceid"    column="deviceid"    />
+        <result property="borrowBy"    column="borrow_by"    />
+        <result property="borrowTime"    column="borrow_time"    />
+        <result property="backTime"    column="back_time"    />
+        <result property="isborrow"    column="isborrow"    />
+        <result property="reason"    column="reason"    />
+        <result property="recoverBy"    column="recover_by"    />
+        <result property="recoverTime"    column="recover_time"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectTblBorrowVo">
+        select id, deviceid, borrow_by, borrow_time, back_time, isborrow, reason, recover_by, recover_time, create_time, update_by, update_time, del_flag, remark from tbl_borrow
+    </sql>
+
+    <select id="selectTblBorrowList" parameterType="TblBorrow" resultMap="TblBorrowResult">
+        <include refid="selectTblBorrowVo"/>
+        <where>  
+            <if test="deviceid != null "> and deviceid = #{deviceid}</if>
+            <if test="borrowBy != null  and borrowBy != ''"> and borrow_by like concat('%', #{borrowBy}, '%')</if>
+            <if test="params.beginBorrowTime != null and params.beginBorrowTime != '' and params.endBorrowTime != null and params.endBorrowTime != ''"> and borrow_time between #{params.beginBorrowTime} and #{params.endBorrowTime}</if>
+            <if test="isborrow != null  and isborrow != ''"> and isborrow = #{isborrow}</if>
+        </where>
+    </select>
+    
+    <select id="selectTblBorrowById" parameterType="Long" resultMap="TblBorrowResult">
+        <include refid="selectTblBorrowVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTblBorrow" parameterType="TblBorrow" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_borrow
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="deviceid != null">deviceid,</if>
+            <if test="borrowBy != null">borrow_by,</if>
+            <if test="borrowTime != null">borrow_time,</if>
+            <if test="backTime != null">back_time,</if>
+            <if test="isborrow != null">isborrow,</if>
+            <if test="reason != null">reason,</if>
+            <if test="recoverBy != null">recover_by,</if>
+            <if test="recoverTime != null">recover_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="deviceid != null">#{deviceid},</if>
+            <if test="borrowBy != null">#{borrowBy},</if>
+            <if test="borrowTime != null">#{borrowTime},</if>
+            <if test="backTime != null">#{backTime},</if>
+            <if test="isborrow != null">#{isborrow},</if>
+            <if test="reason != null">#{reason},</if>
+            <if test="recoverBy != null">#{recoverBy},</if>
+            <if test="recoverTime != null">#{recoverTime},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTblBorrow" parameterType="TblBorrow">
+        update tbl_borrow
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deviceid != null">deviceid = #{deviceid},</if>
+            <if test="borrowBy != null">borrow_by = #{borrowBy},</if>
+            <if test="borrowTime != null">borrow_time = #{borrowTime},</if>
+            <if test="backTime != null">back_time = #{backTime},</if>
+            <if test="isborrow != null">isborrow = #{isborrow},</if>
+            <if test="reason != null">reason = #{reason},</if>
+            <if test="recoverBy != null">recover_by = #{recoverBy},</if>
+            <if test="recoverTime != null">recover_time = #{recoverTime},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTblBorrowById" parameterType="Long">
+        delete from tbl_borrow where id = #{id}
+    </delete>
+
+    <delete id="deleteTblBorrowByIds" parameterType="String">
+        delete from tbl_borrow where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

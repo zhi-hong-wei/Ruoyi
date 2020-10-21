@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TblRfidtagMapper">
+    
+    <resultMap type="TblRfidtag" id="TblRfidtagResult">
+        <result property="id"    column="id"    />
+        <result property="rfid"    column="rfid"    />
+        <result property="deviceid"    column="deviceid"    />
+        <result property="rfState"    column="rf_state"    />
+        <result property="destroyBy"    column="destroy_by"    />
+        <result property="destroyTime"    column="destroy_time"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectTblRfidtagVo">
+        select id, rfid, deviceid, rf_state, destroy_by, destroy_time, del_flag, create_by, create_time, update_by, update_time, remark from tbl_rfidtag
+    </sql>
+
+    <select id="selectTblRfidtagList" parameterType="TblRfidtag" resultMap="TblRfidtagResult">
+        <include refid="selectTblRfidtagVo"/>
+        <where>  
+            <if test="rfid != null  and rfid != ''"> and rfid = #{rfid}</if>
+            <if test="deviceid != null "> and deviceid = #{deviceid}</if>
+            <if test="rfState != null  and rfState != ''"> and rf_state = #{rfState}</if>
+            <if test="params.beginCreateTime != null and params.beginCreateTime != '' and params.endCreateTime != null and params.endCreateTime != ''"> and create_time between #{params.beginCreateTime} and #{params.endCreateTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectTblRfidtagById" parameterType="Long" resultMap="TblRfidtagResult">
+        <include refid="selectTblRfidtagVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTblRfidtag" parameterType="TblRfidtag" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_rfidtag
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rfid != null and rfid != ''">rfid,</if>
+            <if test="deviceid != null">deviceid,</if>
+            <if test="rfState != null and rfState != ''">rf_state,</if>
+            <if test="destroyBy != null">destroy_by,</if>
+            <if test="destroyTime != null">destroy_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="rfid != null and rfid != ''">#{rfid},</if>
+            <if test="deviceid != null">#{deviceid},</if>
+            <if test="rfState != null and rfState != ''">#{rfState},</if>
+            <if test="destroyBy != null">#{destroyBy},</if>
+            <if test="destroyTime != null">#{destroyTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTblRfidtag" parameterType="TblRfidtag">
+        update tbl_rfidtag
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="rfid != null and rfid != ''">rfid = #{rfid},</if>
+            <if test="deviceid != null">deviceid = #{deviceid},</if>
+            <if test="rfState != null and rfState != ''">rf_state = #{rfState},</if>
+            <if test="destroyBy != null">destroy_by = #{destroyBy},</if>
+            <if test="destroyTime != null">destroy_time = #{destroyTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTblRfidtagById" parameterType="Long">
+        delete from tbl_rfidtag where id = #{id}
+    </delete>
+
+    <delete id="deleteTblRfidtagByIds" parameterType="String">
+        delete from tbl_rfidtag where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

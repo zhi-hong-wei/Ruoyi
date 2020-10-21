@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>若依介绍</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <style>
+        .row {
+            background-color: #f3f3f4;
+        }
+
+        .item {
+            height: 108px;
+            background-color: #fff;
+            display: flex;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: auto 20px;
+            border-radius: 4px;
+        }
+
+        .icon img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        .item-right {
+            margin-left: 10px;
+        }
+
+        .item-right .name {
+            font-size: 16px;
+            font-weight: 200;
+            color: gray;
+            margin: 20px 10px;
+        }
+
+        .number {
+            font-size: 20px;
+            font-weight: 300;
+            color: #1b6d85;
+            margin: 0 10px;
+        }
+
+        .graf {
+            width: 355px;
+            height: 350px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .line{
+            background-color: #fff;
+            width:100%;
+            height:350px;
+        }
+    </style>
+</head>
+
+<body class="gray-bg">
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="col-sm-3">
+        <div class="item">
+            <div class="icon">
+                <svg t="1603192865020" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="11870" width="200" height="200">
+                    <path d="M939.251 681.702a102.502 102.502 0 0 1-0.832 33.946l33.78 18.022a127.334 127.334 0 0 1-16.218 37.824l-37.722-11.84a104.474 104.474 0 0 1-23.654 22.196l11.52 38.13a144.64 144.64 0 0 1-38.503 15.36l-18.854-35.993a105.907 105.907 0 0 1-31.411-0.486l-19.61 35.968a130.355 130.355 0 0 1-38.246-16.039l12.493-38.937a104.256 104.256 0 0 1-22.196-21.99l-39.321 11.647a141.312 141.312 0 0 1-15.578-38.08l35.725-18.342a102.72 102.72 0 0 1-0.32-32.256l-34.829-18.586a127.334 127.334 0 0 1 16.205-37.824l36.582 11.52a104.18 104.18 0 0 1 24.09-24.192l-10.829-35.84a144.55 144.55 0 0 1 38.503-15.36l16.998 32.461a106.06 106.06 0 0 1 35.507 0l17.395-31.91a130.304 130.304 0 0 1 38.247 16.038l-11.085 34.56a104.282 104.282 0 0 1 24.704 25.229l35.405-10.483a141.248 141.248 0 0 1 15.603 38.067z m-77.26-49.382a70.157 70.157 0 0 0-91.61 36.66 68.851 68.851 0 0 0 37.12 90.623 70.157 70.157 0 0 0 91.61-36.659 68.851 68.851 0 0 0-37.12-90.624z m-28.16 100.122a36.66 36.66 0 1 1 37.12-36.66 36.864 36.864 0 0 1-37.108 36.596zM808.537 545.28V245.76a24.525 24.525 0 0 0-24.628-24.32H192.832a24.525 24.525 0 0 0-24.627 24.32v133.376c-20.775 0.154-41.178 0.154-49.255 0V245.85a73.485 73.485 0 0 1 73.882-73.05H783.91a73.485 73.485 0 0 1 73.882 73.088v296.448a174.707 174.707 0 0 0-14.003-0.704 171.61 171.61 0 0 0-35.251 3.648zM324.186 437.76v380.71a33.037 33.037 0 0 1-33.127 32.73H84.34a33.037 33.037 0 0 1-33.14-32.73V437.76a33.037 33.037 0 0 1 33.114-32.755h206.745a33.037 33.037 0 0 1 33.127 32.755z m-49.255 364.8v-48.78H100.48v48.78h174.451zM100.48 453.786v251.276h174.451V453.786H100.48z m328.448 64.217V384.384a25.6 25.6 0 0 1 38.4-21.914l116.98 66.804a25.165 25.165 0 0 1 0 43.827l-116.98 66.803a25.6 25.6 0 0 1-38.4-21.9z m34.816 202.893H350.451v-48.73h328.295a165.862 165.862 0 0 0-4.276 36.954c0 3.98 0.333 7.872 0.602 11.776H512.998v81.664h197.03a24.358 24.358 0 1 1 0 48.73H350.273v-48.73h113.472v-81.664z"
+                          p-id="11871" fill="#1296db"></path>
+                </svg>
+            </div>
+            <div class="item-right">
+                <p class="name">设备总数</p>
+                <div id="number1" class="number"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="item">
+            <div class="icon">
+                <svg t="1603192894875" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="12657" width="200" height="200">
+                    <path d="M715.948471 822.534527c11.988605 25.92792 7.29698 57.671603-14.081486 79.05007-25.792362 25.792362-66.681241 27.296724-94.229243 4.509778C408.384221 1038.051685 197.274346 1064.72352 88.794996 956.24417c-136.949807-136.949807-58.494869-437.448517 175.23333-671.176716C497.756525 51.339255 798.255235-27.115682 935.205042 109.834124s58.494869 437.448517-175.23333 671.176717c-14.438565 14.438565-29.131715 28.285304-44.023241 41.523686z m-28.00427-30.95348c14.365827-12.772195 28.55642-26.142829 42.505655-40.092063 215.47087-215.47087 292.342095-487.942166 171.692294-608.591967C781.495655 22.250522 509.021052 99.118441 293.550183 314.589311S1.208088 802.531477 121.857889 923.181278c94.559872 94.559872 282.396777 67.785542 462.953232-51.968254-6.721686-23.669725-0.767059-50.182858 17.870493-68.820411 23.117574-23.117574 58.362618-26.72143 85.262587-10.811566z m-65.428158 90.165814a42.082192 42.082192 0 1 0 59.513207-59.513206 42.082192 42.082192 0 0 0-59.513207 59.513206z"
+                          fill="#8a8a8a" p-id="12658"></path>
+                    <path d="M343.733041 364.772169a237.965443 481.607306 45 1 0 336.533956 336.533957 237.965443 481.607306 45 1 0-336.533956-336.533957Z"
+                          fill="#8a8a8a" p-id="12659"></path>
+                    <path d="M935.206575 956.247671c-136.954155 136.949479-437.449059 58.494247-671.178228-175.234922C30.299178 547.28358-48.156055 246.788676 88.793425 109.834521c136.954155-136.949479 437.449059-58.494247 671.178228 175.234922 233.729169 233.729169 312.184402 534.224073 175.234922 671.178228z m-33.062575-33.062575c120.644968-120.649644 43.774831-393.12716-171.695342-608.597333C514.987836 99.126941 242.51032 22.256804 121.860676 142.897096 1.215708 263.54674 78.085845 536.024256 293.551342 751.494429c215.465498 215.465498 487.943014 292.335635 608.592658 171.690667z"
+                          fill="#8a8a8a" p-id="12660"></path>
+                    <path d="M679.416986 700.458082c188.079342-188.079342 265.211324-415.879598 172.284493-508.811105-92.931507-92.931507-320.736438-15.799525-508.81578 172.279818l336.531287 336.531287z"
+                          fill="#8a8a8a" p-id="12661"></path>
+                    <path d="M310.940639 70.136986m-70.136986 0a70.136986 70.136986 0 1 0 140.273973 0 70.136986 70.136986 0 1 0-140.273973 0Z"
+                          fill="#8a8a8a" p-id="12662"></path>
+                    <path d="M310.940639 70.136986m-42.082192 0a42.082192 42.082192 0 1 0 84.164384 0 42.082192 42.082192 0 1 0-84.164384 0Z"
+                          fill="#8a8a8a" p-id="12663"></path>
+                </svg>
+            </div>
+            <div class="item-right">
+                <p class="name">运行总数</p>
+                <div id="number2" class="number"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="item">
+            <div class="icon">
+                <svg t="1603192945839" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="13708" width="200" height="200">
+                    <path d="M385.403167 134.618979c-109.021814 2.6646-197.690621 91.333407-200.383568 200.355221-0.963791 40.025689 12.699369 74.80722 40.649319 103.46584s62.391319 43.172185 102.417008 43.172185h163.079172c22.507364 0 40.876093-18.36873 40.876093-40.904441V277.656959c0-40.025689-14.513564-74.467058-43.172184-102.417008s-63.440151-41.61311-103.46584-40.620972z"
+                          fill="#1afa29" p-id="13709"></path>
+                    <path d="M728.342819 134.618979c109.021814 2.6646 197.690621 91.333407 200.383568 200.355221 0.963791 40.025689-12.699369 74.80722-40.649319 103.46584s-62.391319 43.172185-102.417008 43.172185h-163.079172c-22.507364 0-40.876093-18.36873-40.876093-40.904441V277.656959c0-40.025689 14.513564-74.467058 43.172184-102.417008s63.440151-41.61311 103.46584-40.620972z"
+                          fill="#1afa29" p-id="13710"></path>
+                    <path d="M928.726387 672.783081c-2.692947 109.021814-91.361754 197.690621-200.383568 200.383567-40.025689 0.963791-74.80722-12.699369-103.46584-40.649319s-43.172185-62.391319-43.172184-102.417008v-163.079172c0-22.507364 18.36873-40.876093 40.876093-40.876093h163.079172c40.025689 0 74.467058 14.513564 102.417008 43.172185s41.61311 63.440151 40.649319 103.46584z"
+                          fill="#1afa29" p-id="13711"></path>
+                    <path d="M385.403167 873.166648c-109.021814-2.692947-197.690621-91.361754-200.383568-200.383567-0.963791-40.025689 12.699369-74.80722 40.649319-103.46584s62.391319-43.172185 102.417008-43.172185h163.079172c22.507364 0 40.876093 18.36873 40.876093 40.876093v163.079172c0 40.025689-14.513564 74.467058-43.172184 102.417008s-63.440151 41.61311-103.46584 40.649319z"
+                          fill="#1afa29" p-id="13712"></path>
+                </svg>
+            </div>
+            <div class="item-right">
+                <p class="name">分类总数</p>
+                <div id="number3" class="number"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="item">
+            <div class="icon">
+                <svg t="1603192381418" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="6994" width="200" height="200">
+                    <path d="M529.2 820.4c-37.4 0-74.8-9.1-104-27.3L240.5 677.7c-10.3-6.4-13.4-20-7-30.3s20-13.4 30.3-7l184.7 115.4c43.7 27.3 117.6 27.3 161.3 0l184.7-115.4c10.3-6.4 23.9-3.3 30.3 7 6.4 10.3 3.3 23.9-7 30.3L633.2 793.1c-29.2 18.2-66.6 27.3-104 27.3z"
+                          p-id="6995" fill="#d81e06"></path>
+                    <path d="M529.2 662.8c-37.4 0-74.8-9.1-104-27.3L240.5 520.1c-31.3-19.6-48.6-46.7-48.6-76.4s17.3-56.8 48.6-76.4l184.7-115.4c58.3-36.4 149.7-36.5 208 0l184.7 115.4c31.3 19.6 48.6 46.7 48.6 76.4s-17.3 56.8-48.6 76.4L633.2 635.5c-29.2 18.2-66.6 27.3-104 27.3z m0-394.1c-29.4 0-58.8 6.8-80.7 20.5L263.9 404.7c-18 11.2-27.9 25.1-27.9 39s9.9 27.8 27.9 39l184.7 115.4c43.7 27.3 117.6 27.3 161.3 0l184.7-115.4c18-11.2 27.9-25.1 27.9-39s-9.9-27.8-27.9-39L609.9 289.3c-21.9-13.7-51.3-20.6-80.7-20.6z"
+                          p-id="6996" fill="#d81e06"></path>
+                </svg>
+            </div>
+            <div class="item-right">
+                <p class="name">设备外借数</p>
+                <div id="number4" class="number"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="agency" class="graf"></div>
+        </div>
+        <div class="col-sm-4">
+            <div id="category" class="graf"></div>
+        </div>
+        <div class="col-sm-4">
+            <div id="sum" class="graf"></div>
+        </div>
+    </div>
+</div>
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="col-sm-12">
+        <div id="line" class="line"></div>
+    </div>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/echarts/4.3.0/echarts.min.js'></script>
+<script type="text/javascript">
+    var myChart1 = echarts.init(document.getElementById('agency'));
+    var myChart2 = echarts.init(document.getElementById('category'));
+    var myChart3 = echarts.init(document.getElementById('sum'));
+    var myChartLine = echarts.init(document.getElementById('line'))
+
+    function showChart() {
+        // myChart.clear();
+        // myChart.showLoading({text:'正在努力加载...'});
+
+        $.ajax({
+            type: "GET",
+            url: "/system/device/index",
+            dataType: "json",
+            async: false,
+            error: function (request) {
+                $.modal.alertError("系统错误");
+            },
+            success: function (data) {
+
+                if (data) {
+                    console.log(data)
+                    // myChart.setOption(data);
+                    // myChart.hideLoading();
+                    var count_num = parseInt(data.sum.countNum)
+                    var countNum = "<span>" + data.sum.countNum + "</span>";
+                    $("#number1").html(countNum)
+                    var status_num = parseInt(data.sum.statusNum)
+                    var statusNum = "<span>" + data.sum.statusNum + "</span>";
+                    $("#number2").html(statusNum)
+                    var isBorrow_num = parseInt(data.sum.isBorrow)
+                    var isBorrow = "<span>" + data.sum.isBorrow + "</span>";
+                    $("#number3").html(isBorrow)
+                    var category_sum = parseInt(data.categorySum)
+                    var categorySum = "<span>" + data.categorySum + "</span>";
+                    $("#number4").html(categorySum)
+
+                    var arrAgency = data.agency;
+                    var agencyPic = []
+                    var valueAgency = []
+                    for (var j = 0; j < arrAgency.length; j++) {
+                        agencyPic[j] = {};
+                        agencyPic[j].name = arrAgency[j].agencyName;
+                        agencyPic[j].max = arrAgency[j].agencyMax;
+                        valueAgency.push(arrAgency[j].agencyCount);
+                    }
+                    console.log(agencyPic)
+
+                    var arrCategory = data.category;
+                    var categoryPie = [];
+                    for (var i = 0; i < arrCategory.length; i++) {
+                        categoryPie[i] = {};
+                        categoryPie[i].value = arrCategory[i].categoryNum;
+                        categoryPie[i].name = arrCategory[i].categoryName;
+                    }
+
+                    var arrSysDataDTOS=data.sysDataDTOS;
+                    var arrCpuSysUse=[];
+                    var arrCpuUserUse=[];
+                    var arrLocalUsage=[];
+                    var arrMemUsage=[];
+                    var X=[];
+                    for (var m = 0; m < 144; m++) {
+                        // categoryPie[i] = {};
+                        arrCpuSysUse.push(arrSysDataDTOS[m].cpuSysUse);
+                        arrCpuUserUse.push(arrSysDataDTOS[m].cpuUserUse);
+                        arrLocalUsage.push(arrSysDataDTOS[m].localUsage);
+                        arrMemUsage.push(arrSysDataDTOS[m].memUsage);
+                        var splitDate=arrSysDataDTOS[m].collactiontime.split(' ')[0];
+                        X.push(arrSysDataDTOS[m].collactiontime.split(' ')[1].substr(0,5))
+                    }
+
+                    var option1 = {
+                        tooltip: {},
+                        radar: {
+                            indicator: agencyPic
+                        },
+                        series: [{
+                            type: 'radar',
+                            data: [
+                                {
+                                    value: valueAgency,
+                                    //这里的配置显示数值
+                                    label: {
+                                        normal: {
+                                            show: true,
+                                            formatter: function (params) {
+                                                return params.value;
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }]
+                    };
+
+                    var option2 = {
+                        series: [
+                            {
+                                type: 'pie',
+                                radius: '55%',
+                                data: categoryPie,
+                                itemStyle: {
+                                    normal: {
+                                        shadowBlur: 20,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    };
+
+                    var option3 = {
+                        tooltip: {
+                            show: true
+                        },
+                        series: [
+                            {
+                                "type": "bar",
+                                "data": [count_num, status_num, isBorrow_num, category_sum],
+                                itemStyle:{
+                                    //通常情况下：
+                                    normal:{
+                                        //每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组中的颜色
+                                        color: '#00BFFF', //设置所有柱状图颜色
+                                        label: {
+                                            show: true, //开启显示
+                                            position: 'top', //在上方显示
+                                            textStyle: { //数值样式
+                                                color: 'black',
+                                                fontSize: 16
+                                            }
+                                        }
+                                    },
+                                    //鼠标悬停时：
+                                    emphasis: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ],
+                        xAxis: [
+                            {
+                                data: ["设备总数", "运行总数", "分类总数", "设备外借数"],
+                                type: 'category',
+                                axisLabel: {
+                                    interval: 0//横轴信息全部显示
+                                }
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value'
+                            }
+                        ]
+                    };
+
+                    var optionLine={
+                        title: {
+                          text: splitDate
+                        },
+                        tooltip: {
+                            //鼠标悬停提示内容
+                            trigger: 'axis', // 触发类型，默认数据触发，可选为：'axis' item
+                            axisPointer: {
+                                type: 'cross',
+                                label: {
+                                    backgroundColor: '#6a7985'
+                                }
+                            }
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: X,
+                            axisLabel: {
+                                interval:6,
+                                rotate:-40
+                            }
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        legend: {
+                            orient: 'horizontal',      // 布局方式，默认为水平布局，可选为：
+                                                       // 'horizontal' ¦ 'vertical'
+                            x: 'center',               // 水平安放位置，默认为全图居中，可选为：
+                                                       // 'center' ¦ 'left' ¦ 'right'
+                                                       // ¦ {number}（x坐标，单位px）
+                            y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
+                                                       // 'top' ¦ 'bottom' ¦ 'center'
+                                                       // ¦ {number}（y坐标，单位px）
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            borderColor: '#ccc',       // 图例边框颜色
+                            borderWidth: 0,            // 图例边框线宽，单位px，默认为0（无边框）
+                            padding: 5,                // 图例内边距，单位px，默认各方向内边距为5，
+                                                       // 接受数组分别设定上右下左边距，同css
+                            itemGap: 10,               // 各个item之间的间隔，单位px，默认为10，
+                                                       // 横向布局时为水平间隔，纵向布局时为纵向间隔
+                            itemWidth: 20,             // 图例图形宽度
+                            itemHeight: 14,            // 图例图形高度
+                            textStyle: {
+                                color: '#333'          // 图例文字颜色
+                            }
+                        },
+                        series: [{
+                            name: 'cpu系统使用率',
+                            data: arrCpuSysUse,
+                            type: 'line',
+                            smooth:true,
+                            symbol:'none'
+                        },{
+                            name: 'cpu用户使用率',
+                            data: arrCpuUserUse,
+                            type: 'line',
+                            smooth:true,
+                            symbol:'none'
+                        },{
+                            name: '磁盘使用率',
+                            data: arrLocalUsage,
+                            type: 'line',
+                            smooth:true,
+                            symbol:'none'
+                        },{
+                            name: '内存使用率',
+                            data: arrMemUsage,
+                            type: 'line',
+                            smooth:true,
+                            symbol:'none'
+                        }]
+                    };
+
+                    myChart1.setOption(option1);
+                    myChart2.setOption(option2);
+                    myChart3.setOption(option3);
+                    myChartLine.setOption(optionLine);
+
+                } else {
+                    alert("出错");
+                }
+            }
+        });
+    }
+
+    showChart();
+</script>
+</body>
+</html>

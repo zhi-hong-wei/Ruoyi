@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TblSysdataMapper">
+    
+    <resultMap type="TblSysdata" id="TblSysdataResult">
+        <result property="id"    column="id"    />
+        <result property="unitid"    column="unitid"    />
+        <result property="cpunum"    column="cpunum"    />
+        <result property="cpuused"    column="cpuused"    />
+        <result property="cpusys"    column="cpusys"    />
+        <result property="cpufree"    column="cpufree"    />
+        <result property="memtotal"    column="memtotal"    />
+        <result property="memused"    column="memused"    />
+        <result property="memfree"    column="memfree"    />
+        <result property="memusage"    column="memusage"    />
+        <result property="sysdirname"    column="sysdirname"    />
+        <result property="systypename"    column="systypename"    />
+        <result property="systotal"    column="systotal"    />
+        <result property="sysfree"    column="sysfree"    />
+        <result property="sysused"    column="sysused"    />
+        <result property="sysusage"    column="sysusage"    />
+        <result property="collactiontime"    column="collactiontime"    />
+    </resultMap>
+
+    <resultMap id="forPic" type="com.ruoyi.system.domain.dto.SysDataDTO">
+
+        <result property="cpuSysUse" column="cpusys"/>
+        <result property="cpuUserUse" column="cpuused"/>
+        <result property="memUsage" column="memusage"/>
+        <result property="localUsage" column="sysusage"/>
+        <result property="collactiontime" column="collactiontime"/>
+    </resultMap>
+
+    <sql id="selectTblSysdataVo">
+        select id, unitid, cpunum, cpuused, cpusys, cpufree, memtotal, memused, memfree, memusage, sysdirname, systypename, systotal, sysfree, sysused, sysusage, collactiontime from tbl_sysdata
+    </sql>
+
+    <select id="selectTblSysdataList" parameterType="TblSysdata" resultMap="TblSysdataResult">
+        <include refid="selectTblSysdataVo"/>
+        <where>  
+            <if test="unitid != null "> and unitid = #{unitid}</if>
+            <if test="cpunum != null "> and cpunum = #{cpunum}</if>
+            <if test="cpuused != null "> and cpuused = #{cpuused}</if>
+            <if test="cpusys != null "> and cpusys = #{cpusys}</if>
+            <if test="cpufree != null "> and cpufree = #{cpufree}</if>
+            <if test="memtotal != null "> and memtotal = #{memtotal}</if>
+            <if test="memused != null "> and memused = #{memused}</if>
+            <if test="memfree != null "> and memfree = #{memfree}</if>
+            <if test="memusage != null "> and memusage = #{memusage}</if>
+            <if test="sysdirname != null  and sysdirname != ''"> and sysdirname like concat('%', #{sysdirname}, '%')</if>
+            <if test="systypename != null  and systypename != ''"> and systypename like concat('%', #{systypename}, '%')</if>
+            <if test="systotal != null "> and systotal = #{systotal}</if>
+            <if test="sysfree != null "> and sysfree = #{sysfree}</if>
+            <if test="sysused != null "> and sysused = #{sysused}</if>
+            <if test="sysusage != null "> and sysusage = #{sysusage}</if>
+            <if test="collactiontime != null "> and collactiontime = #{collactiontime}</if>
+        </where>
+    </select>
+    
+    <select id="selectTblSysdataById" parameterType="Long" resultMap="TblSysdataResult">
+        <include refid="selectTblSysdataVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTblSysdata" parameterType="TblSysdata" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_sysdata
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="unitid != null">unitid,</if>
+            <if test="cpunum != null">cpunum,</if>
+            <if test="cpuused != null">cpuused,</if>
+            <if test="cpusys != null">cpusys,</if>
+            <if test="cpufree != null">cpufree,</if>
+            <if test="memtotal != null">memtotal,</if>
+            <if test="memused != null">memused,</if>
+            <if test="memfree != null">memfree,</if>
+            <if test="memusage != null">memusage,</if>
+            <if test="sysdirname != null">sysdirname,</if>
+            <if test="systypename != null">systypename,</if>
+            <if test="systotal != null">systotal,</if>
+            <if test="sysfree != null">sysfree,</if>
+            <if test="sysused != null">sysused,</if>
+            <if test="sysusage != null">sysusage,</if>
+            <if test="collactiontime != null">collactiontime,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="unitid != null">#{unitid},</if>
+            <if test="cpunum != null">#{cpunum},</if>
+            <if test="cpuused != null">#{cpuused},</if>
+            <if test="cpusys != null">#{cpusys},</if>
+            <if test="cpufree != null">#{cpufree},</if>
+            <if test="memtotal != null">#{memtotal},</if>
+            <if test="memused != null">#{memused},</if>
+            <if test="memfree != null">#{memfree},</if>
+            <if test="memusage != null">#{memusage},</if>
+            <if test="sysdirname != null">#{sysdirname},</if>
+            <if test="systypename != null">#{systypename},</if>
+            <if test="systotal != null">#{systotal},</if>
+            <if test="sysfree != null">#{sysfree},</if>
+            <if test="sysused != null">#{sysused},</if>
+            <if test="sysusage != null">#{sysusage},</if>
+            <if test="collactiontime != null">#{collactiontime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTblSysdata" parameterType="TblSysdata">
+        update tbl_sysdata
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="unitid != null">unitid = #{unitid},</if>
+            <if test="cpunum != null">cpunum = #{cpunum},</if>
+            <if test="cpuused != null">cpuused = #{cpuused},</if>
+            <if test="cpusys != null">cpusys = #{cpusys},</if>
+            <if test="cpufree != null">cpufree = #{cpufree},</if>
+            <if test="memtotal != null">memtotal = #{memtotal},</if>
+            <if test="memused != null">memused = #{memused},</if>
+            <if test="memfree != null">memfree = #{memfree},</if>
+            <if test="memusage != null">memusage = #{memusage},</if>
+            <if test="sysdirname != null">sysdirname = #{sysdirname},</if>
+            <if test="systypename != null">systypename = #{systypename},</if>
+            <if test="systotal != null">systotal = #{systotal},</if>
+            <if test="sysfree != null">sysfree = #{sysfree},</if>
+            <if test="sysused != null">sysused = #{sysused},</if>
+            <if test="sysusage != null">sysusage = #{sysusage},</if>
+            <if test="collactiontime != null">collactiontime = #{collactiontime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTblSysdataById" parameterType="Long">
+        delete from tbl_sysdata where id = #{id}
+    </delete>
+
+    <delete id="deleteTblSysdataByIds" parameterType="String">
+        delete from tbl_sysdata where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectDataForPic" resultMap="forPic">
+
+        select cpusys,cpuused,memusage,sysusage,collactiontime from tbl_sysdata limit 0,144
+
+    </select>
+
+</mapper>
